@@ -12,6 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class AqiServiceImpl implements AqiService {
 
@@ -52,5 +55,11 @@ public class AqiServiceImpl implements AqiService {
         Aqi aqi=aqiRepository.findById(aqiId)
                 .orElseThrow(()-> new ResourceNotFoundException("AQI Data does not exist for the given ID."));
         return AqiMapper.mapToAqiDto(aqi);
+    }
+
+    @Override
+    public List<AqiDto> getAllAQIs() {
+        List<Aqi> aqi=aqiRepository.findAll();
+        return aqi.stream().map((aqi1)->AqiMapper.mapToAqiDto(aqi1)).collect(Collectors.toList());
     }
 }

@@ -6,6 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/aqi")
 public class AqiController {
@@ -28,5 +30,13 @@ public class AqiController {
     public ResponseEntity<AqiDto> getAqiById(@PathVariable("id") Long aqiId){
         AqiDto aqiDto=aqiService.getAqi(aqiId);
         return ResponseEntity.ok(aqiDto);
+    }
+
+    //Build get all AQIs rest API
+
+    @GetMapping
+    public ResponseEntity<List<AqiDto>> getAllAqis(){
+        List<AqiDto> aqi=aqiService.getAllAQIs();
+        return ResponseEntity.ok(aqi);
     }
 }
