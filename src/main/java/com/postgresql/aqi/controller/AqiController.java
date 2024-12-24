@@ -39,4 +39,11 @@ public class AqiController {
         List<AqiDto> aqi=aqiService.getAllAQIs();
         return ResponseEntity.ok(aqi);
     }
+
+    //Build delete AQI rest API
+    @DeleteMapping("{id}")
+    public ResponseEntity<String>deleteAQI(@PathVariable("id") Long aqiId){
+        aqiService.deleteAQI(aqiId);
+        return ResponseEntity.ok("AQI Successfully Deleted!");
+    }
 }

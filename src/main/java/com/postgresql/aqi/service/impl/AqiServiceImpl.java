@@ -62,4 +62,11 @@ public class AqiServiceImpl implements AqiService {
         List<Aqi> aqi=aqiRepository.findAll();
         return aqi.stream().map((aqi1)->AqiMapper.mapToAqiDto(aqi1)).collect(Collectors.toList());
     }
+
+    @Override
+    public void deleteAQI(Long aqiId) {
+        Aqi aqi=aqiRepository.findById(aqiId)
+                .orElseThrow(()-> new ResourceNotFoundException("AQI Data does not exist for the given ID."));
+        aqiRepository.deleteById(aqiId);
+    }
 }

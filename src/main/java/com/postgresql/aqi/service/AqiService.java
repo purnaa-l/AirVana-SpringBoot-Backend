@@ -8,4 +8,5 @@ public interface AqiService {
     AqiDto createAqi(AqiDto aqiDto);
     AqiDto getAqi(Long aqiId);
     List<AqiDto> getAllAQIs();
+    void deleteAQI(Long aqiId);
 }
