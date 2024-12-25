@@ -3,13 +3,13 @@ package com.postgresql.aqi.controller;
 import com.postgresql.aqi.entity.HistoricalDataEntity;
 import com.postgresql.aqi.service.GetHistoricalDataService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.Optional;
 
+
+@CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true") // specify your frontend URL here
 @RestController
 @RequestMapping("/api/historical-data") // Base URL for the endpoint
 public class GetHistoricalDataController {
