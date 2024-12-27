@@ -1,7 +1,6 @@
 package com.postgresql.aqi.service;
 
 import com.postgresql.aqi.entity.HistoricalDataEntity;
-
 import java.util.List;
 import java.util.Optional;
 
