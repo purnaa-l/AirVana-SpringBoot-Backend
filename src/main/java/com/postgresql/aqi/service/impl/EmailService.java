@@ -83,7 +83,6 @@ public class EmailService {
         helper.setText(content, true);  // Set the content as HTML
 
         // Add background image as an inline resource
-        helper.addInline("background-image", new ClassPathResource("static/images/air.png"));
 
         // Add social media icons as inline images
         helper.addInline("facebook-icon", new ClassPathResource("static/images/facebook-icon.png"));
