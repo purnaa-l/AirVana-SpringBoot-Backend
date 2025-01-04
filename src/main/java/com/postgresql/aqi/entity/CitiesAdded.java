@@ -61,4 +61,16 @@ public class CitiesAdded {
 
     private LocalDateTime createdAt;
 
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    private String author;
+
+
+
 }
