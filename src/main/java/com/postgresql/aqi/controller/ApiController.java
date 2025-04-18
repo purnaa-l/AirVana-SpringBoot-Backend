@@ -22,7 +22,7 @@ public class ApiController {
     public List<ApiLog> getAllApiLogs() {
         return apiLogService.getAllApiLogs();
     }
-
+    //This is a comment
     // Example endpoint to log request (existing)
     @GetMapping("/example")
     public String exampleEndpoint(HttpServletRequest request) {
