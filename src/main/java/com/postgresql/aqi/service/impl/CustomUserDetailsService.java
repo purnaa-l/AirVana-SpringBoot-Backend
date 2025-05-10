@@ -1,6 +1,7 @@
 package com.postgresql.aqi.service.impl;
 
 import com.postgresql.aqi.entity.User;
+import com.postgresql.aqi.exception.EmailAlreadyExistsException;
 import com.postgresql.aqi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.*;
@@ -25,5 +26,6 @@ public class CustomUserDetailsService implements UserDetailsService {
                 user.getPassword(),
                 List.of(new SimpleGrantedAuthority(user.getRole()))
         );
+
     }
 }
