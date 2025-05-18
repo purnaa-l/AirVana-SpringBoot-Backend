@@ -28,9 +28,10 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .cors(cors -> {}) // default cors config
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/api/auth/**", "/api/historical-data/**", "/api/**").permitAll() // 👈 add this
                         .anyRequest().authenticated()
                 )
+
                 .httpBasic(httpBasic -> {}); // default HTTP Basic config
 
         return http.build();
@@ -44,5 +45,7 @@ public class SecurityConfig {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+
     }
+
 }
