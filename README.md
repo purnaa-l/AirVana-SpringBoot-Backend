@@ -141,8 +141,6 @@
 
 -----
 
-Check the Backend code here: 
-Check the ML Models here: 
 
 
 
